@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://3pa5b5lk3q6q"]
+
+[ext_resource type="FontFile" uid="uid://ddrijcojvnvtu" path="res://Fonts/Kaifontnormal-Regular.ttf (1).otf" id="1_53x1b"]
+[ext_resource type="AudioStream" uid="uid://w7apk6bb3f01" path="res://Sounds/TextBox.ogg" id="2_4v4aa"]
+
+[node name="TextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1)
+pivot_offset = Vector2(320, 240)
+
+[node name="OuterLine" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.0
+offset_top = 62.0
+offset_right = 293.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(295, 78)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = 65.0
+offset_right = 290.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(290, 73)
+
+[node name="BlackBox" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = 70.0
+offset_right = 285.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(285, 68)
+color = Color(0, 0, 0, 1)
+
+[node name="TextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = 79.0
+offset_right = 266.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(265, 56)
+theme_override_fonts/normal_font = ExtResource("1_53x1b")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "
+"
+fit_content = true
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4v4aa")
+volume_db = 5.0
+max_polyphony = 64

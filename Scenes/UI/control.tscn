@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://ftvw1kpdrm0r"]
+
+[ext_resource type="Texture2D" uid="uid://drhcl7hakd065" path="res://Sprites/UI/UpArrow.png" id="1_dy75l"]
+[ext_resource type="Script" path="res://Scripts/UI/control.gd" id="1_or4ln"]
+[ext_resource type="Texture2D" uid="uid://dgyokl5a6t3on" path="res://Sprites/UI/Titelloses 27_20240305004213.png" id="2_4bhg7"]
+[ext_resource type="Texture2D" uid="uid://dn1del3vo2bba" path="res://Sprites/UI/DownArrow.png" id="2_rw76g"]
+[ext_resource type="Texture2D" uid="uid://ubwakycxyvh6" path="res://Sprites/UI/LeftArrow.png" id="3_a1gix"]
+[ext_resource type="Texture2D" uid="uid://byvnss2k70kcy" path="res://Sprites/UI/Titelloses 27_20240305004224.png" id="4_2cvbf"]
+[ext_resource type="Texture2D" uid="uid://c064o5nrynwbd" path="res://Sprites/UI/RightArrow.png" id="4_8vx7t"]
+[ext_resource type="Texture2D" uid="uid://db62qu7705qrr" path="res://Sprites/UI/Titelloses 27_20240305004207.png" id="6_ua3pl"]
+[ext_resource type="Texture2D" uid="uid://cgpxb4gc2rikx" path="res://Sprites/UI/Titelloses 27_20240305004219.png" id="8_qp3nm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdocs"]
+size = Vector2(64, 64)
+
+[node name="Controls" type="Control"]
+modulate = Color(1, 1, 1, 0.196078)
+top_level = true
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_or4ln")
+
+[node name="Up" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(103, 232)
+texture_normal = ExtResource("1_dy75l")
+texture_pressed = ExtResource("2_4bhg7")
+shape = SubResource("RectangleShape2D_fdocs")
+passby_press = true
+action = "walk_up"
+visibility_mode = 1
+
+[node name="Accept" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(500, 307)
+texture_normal = ExtResource("1_dy75l")
+texture_pressed = ExtResource("2_4bhg7")
+shape = SubResource("RectangleShape2D_fdocs")
+passby_press = true
+action = "accept"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="."]
+texture_filter = 3
+position = Vector2(103, 368)
+texture_normal = ExtResource("2_rw76g")
+texture_pressed = ExtResource("4_2cvbf")
+shape = SubResource("RectangleShape2D_fdocs")
+passby_press = true
+action = "walk_down"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="."]
+texture_filter = 3
+position = Vector2(35, 300)
+texture_normal = ExtResource("3_a1gix")
+texture_pressed = ExtResource("6_ua3pl")
+shape = SubResource("RectangleShape2D_fdocs")
+passby_press = true
+action = "walk_left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+texture_filter = 3
+position = Vector2(171, 300)
+texture_normal = ExtResource("4_8vx7t")
+texture_pressed = ExtResource("8_qp3nm")
+shape = SubResource("RectangleShape2D_fdocs")
+passby_press = true
+action = "walk_right"
+visibility_mode = 1

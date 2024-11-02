@@ -1,0 +1,163 @@
+[gd_scene load_steps=14 format=3 uid="uid://bux7gsjb48swp"]
+
+[ext_resource type="Texture2D" uid="uid://isi2roa2d0ju" path="res://Sprites/UI/Image1.png" id="2_yl1th"]
+[ext_resource type="Shader" path="res://Shaders/wave_effect.gdshader" id="4_687al"]
+
+[sub_resource type="Gradient" id="Gradient_ncrq3"]
+offsets = PackedFloat32Array(0, 0.508197, 1)
+colors = PackedColorArray(0.376471, 0.317647, 1, 1, 1, 0.376471, 0.792157, 1, 0.376471, 0.317647, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6nk7x"]
+gradient = SubResource("Gradient_ncrq3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4atjy"]
+shader = ExtResource("4_687al")
+shader_parameter/snes_transparency = true
+shader_parameter/gba_transparency = true
+shader_parameter/horizontal_scan_line = false
+shader_parameter/vertical_scan_line = false
+shader_parameter/enable_palette_cycling = true
+shader_parameter/scale = 1.0
+shader_parameter/sprite_scroll_direction = Vector2(2, -1)
+shader_parameter/sprite_scroll_speed = 0.025
+shader_parameter/gba_transparency_scroll_direction = Vector2(0, 0)
+shader_parameter/gba_transparency_scroll_speed = 0.01
+shader_parameter/gba_transparency_value = 0.5
+shader_parameter/horizontal_wave_amplitude = 0.02
+shader_parameter/horizontal_wave_frequency = 10.0
+shader_parameter/horizontal_wave_speed = 3.0
+shader_parameter/vertical_wave_amplitude = 0.0
+shader_parameter/vertical_wave_frequency = 0.0
+shader_parameter/vertical_wave_speed = 0.0
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.0
+shader_parameter/horizontal_deform_speed = 1.0
+shader_parameter/vertical_deform_amplitude = 1.0
+shader_parameter/vertical_deform_frequency = 2.0
+shader_parameter/vertical_deform_speed = 0.1
+shader_parameter/width = 640.0
+shader_parameter/height = 640.0
+shader_parameter/freaky_colors = false
+shader_parameter/palette_cycling_speed = 0.2
+shader_parameter/palette = SubResource("GradientTexture1D_6nk7x")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_16iwd"]
+seed = 2
+frequency = 0.0025
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_clb41"]
+generate_mipmaps = false
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_16iwd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8mgm"]
+shader = ExtResource("4_687al")
+shader_parameter/snes_transparency = false
+shader_parameter/gba_transparency = false
+shader_parameter/horizontal_scan_line = false
+shader_parameter/vertical_scan_line = false
+shader_parameter/enable_palette_cycling = false
+shader_parameter/scale = 1.0
+shader_parameter/sprite_scroll_direction = Vector2(5, 5)
+shader_parameter/sprite_scroll_speed = 0.01
+shader_parameter/gba_transparency_scroll_direction = Vector2(0, 0)
+shader_parameter/gba_transparency_scroll_speed = 0.01
+shader_parameter/gba_transparency_value = 0.5
+shader_parameter/horizontal_wave_amplitude = 0.0
+shader_parameter/horizontal_wave_frequency = 0.0
+shader_parameter/horizontal_wave_speed = 1.0
+shader_parameter/vertical_wave_amplitude = 0.0
+shader_parameter/vertical_wave_frequency = 0.0
+shader_parameter/vertical_wave_speed = 1.0
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.0
+shader_parameter/horizontal_deform_speed = 1.0
+shader_parameter/vertical_deform_amplitude = 0.0
+shader_parameter/vertical_deform_frequency = 0.0
+shader_parameter/vertical_deform_speed = 1.0
+shader_parameter/width = 0.0
+shader_parameter/height = 0.0
+shader_parameter/freaky_colors = true
+shader_parameter/palette_cycling_speed = 0.1
+shader_parameter/palette = SubResource("NoiseTexture2D_clb41")
+
+[sub_resource type="Gradient" id="Gradient_niu50"]
+colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0s3h4"]
+frequency = 0.0025
+fractal_octaves = 10
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ruo26"]
+seamless = true
+seamless_blend_skirt = 1.0
+bump_strength = 32.0
+color_ramp = SubResource("Gradient_niu50")
+noise = SubResource("FastNoiseLite_0s3h4")
+
+[sub_resource type="Gradient" id="Gradient_82r7l"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4f6os"]
+gradient = SubResource("Gradient_82r7l")
+width = 2
+
+[node name="Backgrounds" type="CanvasLayer"]
+layer = -128
+
+[node name="DreamyBackground" type="TextureRect" parent="."]
+visible = false
+z_index = -1
+z_as_relative = false
+texture_filter = 2
+texture_repeat = 3
+material = SubResource("ShaderMaterial_4atjy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_yl1th")
+
+[node name="ComaAreaBackground" type="TextureRect" parent="."]
+visible = false
+z_index = -1
+z_as_relative = false
+texture_filter = 2
+texture_repeat = 3
+material = SubResource("ShaderMaterial_s8mgm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("NoiseTexture2D_ruo26")
+
+[node name="ComaAreaBackground2" type="TextureRect" parent="."]
+visible = false
+z_index = -1
+z_as_relative = false
+texture_filter = 2
+texture_repeat = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_4f6os")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0a0e7ps52lde"]
+
+[ext_resource type="Script" path="res://Scripts/Events/ZoneArea.gd" id="1_b475i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m655s"]
+size = Vector2(32, 32)
+
+[node name="ZoneArea" type="Node2D"]
+editor_description = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]{text}[/pulse]
+[wave amp=50.0 freq=5.0]{text}[/wave]
+[tornado radius=10.0 freq=1.0]{text}[/tornado]
+[shake rate=20.0 level=20]{text}[/shake]
+[fade start=4 length=14]{text}[/fade]
+[rainbow freq=1.0 sat=0.8 val=0.8]{text}[/rainbow]"
+z_index = 9
+script = ExtResource("1_b475i")
+lookDirection = "left"
+
+[node name="ZoneArea" type="Area2D" parent="."]
+collision_layer = 2
+input_pickable = false
+
+[node name="ZoneArea" type="CollisionShape2D" parent="ZoneArea"]
+shape = SubResource("RectangleShape2D_m655s")
+debug_color = Color(0.639216, 0.52549, 0, 0.419608)

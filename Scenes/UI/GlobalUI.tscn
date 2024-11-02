@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50jjujai1apg"]
+
+[ext_resource type="PackedScene" uid="uid://3pa5b5lk3q6q" path="res://Scenes/UI/TextBox.tscn" id="1_hrnmd"]
+[ext_resource type="PackedScene" uid="uid://ftvw1kpdrm0r" path="res://Scenes/UI/control.tscn" id="2_xnqy3"]
+
+[node name="GlobalUI" type="CanvasLayer"]
+layer = 128
+
+[node name="TextBox" parent="." instance=ExtResource("1_hrnmd")]
+
+[node name="Controls" parent="." instance=ExtResource("2_xnqy3")]
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 232)
+color = Color(0, 0, 0, 0)
+
+[node name="CautionText" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = 50.0
+offset_right = -70.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 190)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=#ff0000] [font_size=40]WARNING![/font_size][/color] 
+This game contains depression, and other stuff"
+metadata/_edit_use_anchors_ = true
