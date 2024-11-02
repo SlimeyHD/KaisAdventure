@@ -1,4 +1,2 @@
-.import/
+.godot/
 *.translation
-export_presets.cfg
-.mono/
