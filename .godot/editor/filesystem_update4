@@ -1,0 +1,10 @@
+res://Scenes/UI/menu.tscn
+res://Shaders/base_theme.tres
+res://Shaders/wave_effect.gdshader
+res://Scenes/UI/control.tscn
+res://Scenes/UI/TextBox.tscn
+res://Scenes/Special/battle.tscn
+res://Scenes/UI/battleUI.tscn
+res://Scenes/Characters/player.tscn
+res://Scenes/UI/GlobalUI.tscn
+res://Scenes/UI/Backgrounds.tscn
