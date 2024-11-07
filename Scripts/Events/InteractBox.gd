@@ -1,8 +1,10 @@
-extends Node2D
+extends Area2D
 
-@export var TextArray = ["TEMPLATE"]
-@export var TextSpeed = [1.0]
-@export var DefaultSpeed = 1.0
+class_name TextObject
+
+var TextArray = ["TEMPLATE"]
+var TextSpeed = [1.0]
+var DefaultSpeed = 1.0
 
 func _ready():
 	TextSpeed.resize(TextArray.size())

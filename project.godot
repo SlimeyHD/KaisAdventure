@@ -34,11 +34,23 @@ CreateNodes="*res://Scripts/Global/create_nodes.gd"
 window/size/viewport_width=640
 window/size/viewport_height=480
 window/stretch/mode="viewport"
+"<<<<<<<HEAD[editor]version_control/plugin_name"="GitPlugin"
+version_control/autoload_on_startup=true
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "green",
+"res://Scripts/": "blue",
+"res://Shaders/": "purple",
+"res://Sounds/": "red",
+"res://Sprites/": "orange"
+}
 
 [filesystem]
 
