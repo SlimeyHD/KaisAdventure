@@ -12,10 +12,6 @@ var left_rect = null
 var directions = ["left", "right", "up", "down"]
 var vectordirections = [Vector2(-1, 0), Vector2(1, 0), Vector2(0, -1), Vector2(0, 1)]
 
-func _ready():
-	var create_nodes = get_node("/root/CreateNodes")
-	create_nodes.connect("sendGlobalUI", _on_sendGlobalUI)
-
 func _on_sendGlobalUI(GlobalUITemp):
 	GlobalUI = GlobalUITemp
 	TransitionRect = GlobalUI.get_node("TransitionRect")
@@ -23,6 +19,7 @@ func _on_sendGlobalUI(GlobalUITemp):
 func transitionTo(transitionToColor = Color(0, 0, 0, 1), tween_time = 1.0, waitForEnd = true):
 	var tween = get_tree().root.create_tween()
 	tween.tween_property(TransitionRect, "color", transitionToColor, tween_time)
+	
 	if waitForEnd == true:
 		await tween.finished
 

@@ -7,30 +7,17 @@ var Canvas
 var TextBox
 var TextLabel
 
-var CharacterTextPlaceholder
-
-var currentInstance = null
-
-var currentText = 0
-var currentMultText = 0
-
-var isTalkingLocal = false
-var isDoneReading = false
-var hasMultipleLines = false
-
-var TweenRunning
+var textList : Array[String]
 
 var cd = false
 
 # Functions #
-func _ready():
-	var create_nodes = get_node("/root/CreateNodes")
-	create_nodes.connect("sendGlobalUI", _startScript)
-
 func _startScript(CanvasTemp):
 	Canvas = CanvasTemp
 	TextBox = Canvas.get_node("TextBox")
 	TextLabel = TextBox.get_node("TextLabel")
+	
+	"""
 	while true:
 		if TextLabel.text.length() != 0 and TextLabel.visible_characters > lastCharacters:
 			if TextLabel.text.unicode_at(TextLabel.visible_characters) != 0 and TextLabel.text[TextLabel.visible_characters] != " ":
@@ -38,7 +25,6 @@ func _startScript(CanvasTemp):
 		lastCharacters = TextLabel.visible_characters
 		await get_tree().create_timer(0.01).timeout
 
-var lastCharacters = 0
 
 func _input(_event):
 	if Input.is_action_just_pressed("accept") and cd == false:
@@ -126,3 +112,4 @@ func DisplayMultipleText():
 			DisplayText()
 		else:
 			closeTextBox()
+"""

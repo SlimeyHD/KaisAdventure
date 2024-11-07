@@ -1,10 +1,8 @@
-res://Scenes/UI/menu.tscn
-res://Shaders/base_theme.tres
-res://Shaders/wave_effect.gdshader
-res://Scenes/UI/control.tscn
-res://Scenes/UI/TextBox.tscn
-res://Scenes/Special/battle.tscn
-res://Scenes/UI/battleUI.tscn
-res://Scenes/Characters/player.tscn
-res://Scenes/UI/GlobalUI.tscn
 res://Scenes/UI/Backgrounds.tscn
+res://Shaders/wave_effect.gdshader
+res://Scripts/Global/message_handler.gd
+res://Scenes/Maps/HeadWorld/ExitComa.tscn
+res://Scenes/Events/InteractBox.tscn
+res://Scenes/Maps/House/house1.tscn
+res://Scenes/UI/control.tscn
+res://Scripts/Global/global.gd

@@ -9,6 +9,7 @@ layer = 128
 [node name="TextBox" parent="." instance=ExtResource("1_hrnmd")]
 
 [node name="Controls" parent="." instance=ExtResource("2_xnqy3")]
+script = null
 
 [node name="TransitionRect" type="ColorRect" parent="."]
 anchors_preset = 15

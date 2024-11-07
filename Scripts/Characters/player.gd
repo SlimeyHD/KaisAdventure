@@ -41,7 +41,7 @@ func _input(_event):
 
 func _physics_process(_delta):
 	if !GlobalVariables.isLoading: zoneCheck()
-	input_direction = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
+	input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if input_direction != Vector2.ZERO and !GlobalVariables.isTalking and !GlobalVariables.isLoading and !GlobalVariables.isChangingWorld:
 		animationTree.set("parameters/Walk/blend_position", input_direction)
 		animationTree.set("parameters/Idle/blend_position", input_direction)
@@ -50,5 +50,3 @@ func _physics_process(_delta):
 		move_and_slide()
 	else:
 		animationState.travel("Idle")
-
-

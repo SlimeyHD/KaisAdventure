@@ -10,4 +10,7 @@ func _ready():
 	root.call_deferred("add_child", GlobalUI)
 	root.call_deferred("add_child", Backgrounds)
 	await GlobalUI.ready
+	
+	self.connect("sendGlobalUI", MessageHandler._startScript)
+	
 	emit_signal("sendGlobalUI", GlobalUI)

@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c62ggdl0fw6rs"]
-
-[ext_resource type="Script" path="res://Scripts/Events/InteractBox.gd" id="1_3t4sy"]
+[gd_scene load_steps=2 format=3 uid="uid://c62ggdl0fw6rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m655s"]
 size = Vector2(32, 32)
 
-[node name="InteractionArea" type="Node2D"]
+[node name="InteractionArea" type="Area2D"]
 editor_description = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]{text}[/pulse]
 [wave amp=50.0 freq=5.0]{text}[/wave]
 [tornado radius=10.0 freq=1.0]{text}[/tornado]
@@ -13,11 +11,8 @@ editor_description = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]{text}[/pulse]
 [fade start=4 length=14]{text}[/fade]
 [rainbow freq=1.0 sat=0.8 val=0.8]{text}[/rainbow]"
 z_index = 9
-script = ExtResource("1_3t4sy")
-
-[node name="InteractableObject" type="Area2D" parent="."]
 collision_layer = 2
 
-[node name="InteractableObject" type="CollisionShape2D" parent="InteractableObject"]
+[node name="InteractableObject2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m655s")
 debug_color = Color(0.968627, 0, 0.458824, 0.419608)

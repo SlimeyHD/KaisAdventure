@@ -336,7 +336,6 @@ texture_filter = 1
 texture = ExtResource("1_aau7p")
 hframes = 8
 vframes = 5
-frame = 26
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
@@ -351,9 +350,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_glww1")
-}
 tree_root = SubResource("AnimationNodeStateMachine_6lna6")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0.1)
