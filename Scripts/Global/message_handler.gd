@@ -14,13 +14,8 @@ var textQueue : Array[String] :
 
 var cd = false
 
-func _ready() -> void:
-	print("STARTED")
-	textQueue.append("HELLO")
-	textQueue.append("AAAAA")
-	textQueue = textQueue.append("AAAA")
-
-
+func addText(text : String):
+	textQueue.append(text)
 
 # Functions #
 func startScript():

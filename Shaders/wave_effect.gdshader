@@ -8,7 +8,6 @@ uniform bool snes_transparency = false;
 uniform bool gba_transparency = false;
 uniform bool horizontal_scan_line = false;
 uniform bool vertical_scan_line = false;
-uniform bool enable_palette_cycling = false;
 uniform float scale = 1.0;
 
 group_uniforms Sprite_Scroll;
@@ -19,7 +18,6 @@ group_uniforms GBA_Transparency;
 uniform vec2 gba_transparency_scroll_direction = vec2(0.0, 0.0);
 uniform float gba_transparency_scroll_speed = 0.01;
 uniform float gba_transparency_value : hint_range(0.0, 1.0) = 0.5;
-
 
 group_uniforms Horizontal_Wave;
 uniform float horizontal_wave_amplitude = 0.0;
@@ -48,7 +46,15 @@ uniform float width = 0.0;
 uniform float height = 0.0;
 
 group_uniforms Palette_Cycling;
-uniform bool freaky_colors = false;
+uniform bool paletteOverride = false;
+uniform bool paletteAdd = false;
+
+uniform bool enableRed = true;
+uniform bool enableGreen = true;
+uniform bool enableBlue = true;
+
+uniform bool paletteReversed = false;
+
 uniform float palette_cycling_speed = 0.1;
 uniform sampler2D palette;
 
@@ -75,8 +81,6 @@ void fragment(){
 	vec4 textube = texture(TEXTURE, fract(vec2(UV.x+def_x + wav_x, UV.y+def_y + wav_y) + move)*scale);
 	vec4 textubeInverted = texture(TEXTURE, fract(vec2(UV.x - def_x - wav_x, UV.y-def_y - wav_y) + move)*scale);
 	
-	
-	
 	if (gba_transparency)
 	{
 		float copy_wav_x = -calculate_diff(UV.y, horizontal_wave_amplitude, horizontal_wave_frequency, horizontal_wave_speed);
@@ -96,13 +100,18 @@ void fragment(){
 		textube = mix(textube, tex_copy, gba_transparency_value);
 	}
 	
-	float palette_swap = mod(textube.r - TIME*palette_cycling_speed, 1.0);
+	float redTextube 		= textube.r * (enableRed ? 1.0 : 0.0);
+	float greenTextube 		= textube.g * (enableGreen ? 1.0 : 0.0);
+	float blueTextube		= textube.b * (enableBlue ? 1.0 : 0.0);
 	
-	if (enable_palette_cycling)
-	{textube = vec4(texture(palette, vec2(palette_swap, 0)).rgb, textube.a);}
+	float totalTextube = (paletteReversed ? -1.0 : 1.0) * (redTextube + greenTextube + blueTextube);
+	float palette_swap = mod(totalTextube + TIME*palette_cycling_speed, 1);
 	
-	if (horizontal_scan_line) COLOR = mix(textubeInverted, COLOR, float(int(UV.y * height) % 2));
-	if (vertical_scan_line) COLOR = mix(textubeInverted, COLOR, float(int(UV.y * width) % 2));
-	if (!horizontal_scan_line || !vertical_scan_line) COLOR = textube;
-	if (freaky_colors) COLOR = mix(texture(palette, vec2(palette_swap, 0)), COLOR, float(int(UV.y * (height)) % 2)-1.0);
+	if (horizontal_scan_line) textube = mix(textubeInverted, COLOR, float(int(UV.y * height) % 2));
+	if (vertical_scan_line) textube = mix(textubeInverted, COLOR, float(int(UV.x * width) % 2));
+	
+	if (paletteOverride) textube = vec4(texture(palette, vec2(palette_swap, 0)).rgb, textube.a);
+	if (paletteAdd) textube = texture(palette, vec2(palette_swap, 0.0)) + textube;
+	
+	COLOR = textube;
 }
