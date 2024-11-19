@@ -46,8 +46,8 @@ house1.tscn::PackedScene::7694869979681218728::1712510707::0::1::::<><>::uid://q
 house2.tscn::PackedScene::4425078085787711403::1712510707::0::1::::<><>::uid://q8cq4c7uvg7s::::res://Sprites/Map/HouseTileset.png<>uid://gwtqkb2muqfj::::res://Scenes/Characters/player.tscn<>res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd<>uid://c62ggdl0fw6rs::::res://Scenes/Events/InteractBox.tscn<>uid://d0a0e7ps52lde::::res://Scenes/Events/ZoneArea.tscn
 ::res://Scenes/Special/::1731511302
 battle.tscn::PackedScene::5373844056016811701::1712510707::0::1::::<><>::uid://q8cq4c7uvg7s::::res://Sprites/Map/HouseTileset.png<>uid://3li7mnsnr6m8::::res://Sprites/Map/Objects.png<>uid://gwtqkb2muqfj::::res://Scenes/Characters/player.tscn<>uid://b3if2qm2s3b7j::::res://Scenes/UI/battleUI.tscn
-::res://Scenes/UI/::1731801764
-Backgrounds.tscn::PackedScene::3839632862738129915::1712510707::0::1::::<><>::uid://isi2roa2d0ju::::res://Sprites/UI/Image1.png<>uid://c2kbsoc4fuumt::::res://Sprites/Map/Screenshot_20241116-234344.png<>res://Shaders/wave_effect.gdshader
+::res://Scenes/UI/::1731929537
+Backgrounds.tscn::PackedScene::3839632862738129915::1712510707::0::1::::<><>::uid://isi2roa2d0ju::::res://Sprites/UI/Image1.png<>uid://bbifl61h5priu::::res://icon.png<>res://Shaders/wave_effect.gdshader
 battleUI.tscn::PackedScene::4368575989152919085::1712510707::0::1::::<><>::uid://dnb2dpvn0ypgk::::res://Shaders/base_theme.tres
 control.tscn::PackedScene::391483121572672299::1712510707::0::1::::<><>::uid://drhcl7hakd065::::res://Sprites/UI/UpArrow.png<>uid://dgyokl5a6t3on::::res://Sprites/UI/Titelloses 27_20240305004213.png<>uid://dn1del3vo2bba::::res://Sprites/UI/DownArrow.png<>uid://ubwakycxyvh6::::res://Sprites/UI/LeftArrow.png<>uid://byvnss2k70kcy::::res://Sprites/UI/Titelloses 27_20240305004224.png<>uid://c064o5nrynwbd::::res://Sprites/UI/RightArrow.png<>uid://db62qu7705qrr::::res://Sprites/UI/Titelloses 27_20240305004207.png<>uid://cgpxb4gc2rikx::::res://Sprites/UI/Titelloses 27_20240305004219.png
 GlobalUI.tscn::PackedScene::4544259026147564948::1731006286::0::1::::<><>::uid://3pa5b5lk3q6q::::res://Scenes/UI/TextBox.tscn<>uid://ftvw1kpdrm0r::::res://Scenes/UI/control.tscn
@@ -72,7 +72,7 @@ ExitComa.gd::GDScript::-1::1712510707::0::1::::<>Node2D<>::
 interact_box_lamp.gd::GDScript::-1::1730933240::0::1::::<>Node2D<>::
 ::res://Scripts/UI/::1730978966
 Menu.gd::GDScript::-1::1712510707::0::1::::<>Control<>::
-::res://Shaders/::1731801764
+::res://Shaders/::1731929537
 base_theme.tres::Theme::8075426933230367810::1712510707::0::1::::<><>::
 Blur.gdshader::Shader::-1::1712510707::0::1::::<><>::
 DreamyBackgroundShader.tres::Shader::2449327984324195447::1712510707::0::1::::<><>::
