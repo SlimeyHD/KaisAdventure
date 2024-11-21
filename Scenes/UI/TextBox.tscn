@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3pa5b5lk3q6q"]
 
 [ext_resource type="FontFile" uid="uid://ddrijcojvnvtu" path="res://Fonts/Kaifontnormal-Regular.ttf (1).otf" id="1_53x1b"]
-[ext_resource type="AudioStream" uid="uid://w7apk6bb3f01" path="res://Sounds/TextBox.ogg" id="2_4v4aa"]
+[ext_resource type="AudioStream" uid="uid://dur4jex8p652i" path="res://Sounds/CharacterSpeak_Female1.wav" id="2_jg222"]
 
 [node name="TextBox" type="Control"]
 layout_mode = 3
@@ -75,14 +75,13 @@ pivot_offset = Vector2(265, 56)
 theme_override_fonts/normal_font = ExtResource("1_53x1b")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "
-"
 fit_content = true
 scroll_active = false
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="TextSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_4v4aa")
-volume_db = 5.0
-max_polyphony = 64
+stream = ExtResource("2_jg222")
+volume_db = -5.0
+pitch_scale = 0.6
+max_polyphony = 128

@@ -36,23 +36,14 @@ corner_detail = 1
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 256.0
-grow_vertical = 2
-
-[node name="Menu" type="Control" parent="Menu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 384.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 240)
-script = ExtResource("1_cv47j")
 
-[node name="TextureRect" type="TextureRect" parent="Menu/Menu"]
+[node name="TextureRect" type="TextureRect" parent="Menu"]
 texture_filter = 6
 layout_mode = 0
 offset_left = 256.0
@@ -60,19 +51,21 @@ offset_right = 640.0
 offset_bottom = 480.0
 texture = ExtResource("2_ppa1r")
 
-[node name="ColorRect" type="ColorRect" parent="Menu/Menu"]
+[node name="ColorRect" type="ColorRect" parent="Menu"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 480.0
 color = Color(0.368627, 0.368627, 0.368627, 1)
+script = ExtResource("1_cv47j")
 
-[node name="NewGameButton" type="Button" parent="Menu/Menu"]
+[node name="NewGameButton" type="Button" parent="Menu/ColorRect"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
 offset_top = 64.0
 offset_right = 248.0
 offset_bottom = 128.0
+focus_neighbor_top = NodePath("../LoadGameButton")
 focus_neighbor_bottom = NodePath("../LoadGameButton")
 theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -82,7 +75,7 @@ button_mask = 0
 text = "New Game"
 icon_alignment = 1
 
-[node name="LoadGameButton" type="Button" parent="Menu/Menu"]
+[node name="LoadGameButton" type="Button" parent="Menu/ColorRect"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
@@ -90,6 +83,7 @@ offset_top = 152.0
 offset_right = 248.0
 offset_bottom = 216.0
 focus_neighbor_top = NodePath("../NewGameButton")
+focus_neighbor_bottom = NodePath("../NewGameButton")
 theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxFlat_necrm")
@@ -99,20 +93,21 @@ text = "Load Game
 "
 icon_alignment = 1
 
-[node name="MoveSound" type="AudioStreamPlayer" parent="Menu/Menu"]
+[node name="MoveSound" type="AudioStreamPlayer" parent="Menu/ColorRect"]
 stream = ExtResource("4_n7i3j")
 max_polyphony = 64
 
-[node name="EnterSound" type="AudioStreamPlayer" parent="Menu/Menu"]
+[node name="EnterSound" type="AudioStreamPlayer" parent="Menu/ColorRect"]
 stream = ExtResource("4_oya5l")
 max_polyphony = 64
 
-[node name="Controls" type="Control" parent="Menu"]
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 480.0
 
-[node name="EnterKey" type="Label" parent="Menu/Controls"]
+[node name="EnterKey" type="Label" parent="Controls"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
@@ -126,7 +121,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="EnterHelp" type="Label" parent="Menu/Controls"]
+[node name="EnterHelp" type="Label" parent="Controls"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 56.0
@@ -139,7 +134,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MoveKey" type="Label" parent="Menu/Controls"]
+[node name="MoveKey" type="Label" parent="Controls"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
@@ -153,7 +148,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MoveHelp" type="Label" parent="Menu/Controls"]
+[node name="MoveHelp" type="Label" parent="Controls"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 104.0
@@ -166,5 +161,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="focus_entered" from="Menu/Menu/NewGameButton" to="Menu/Menu" method="_on_new_game_button_focus_entered"]
-[connection signal="focus_entered" from="Menu/Menu/LoadGameButton" to="Menu/Menu" method="_on_load_game_button_focus_entered"]
+[connection signal="focus_entered" from="Menu/ColorRect/NewGameButton" to="Menu" method="_on_new_game_button_focus_entered"]
+[connection signal="focus_entered" from="Menu/ColorRect/LoadGameButton" to="Menu" method="_on_load_game_button_focus_entered"]

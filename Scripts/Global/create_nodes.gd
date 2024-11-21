@@ -17,6 +17,6 @@ func _ready():
 	Global.GlobalUI = GlobalUI
 	Global.TransitionRect = GlobalUI.get_node("TransitionRect")
 	
-	MessageHandler.Canvas = GlobalUI
-	MessageHandler.TextBox = GlobalUI.get_node("TextBox")
-	MessageHandler.TextLabel = GlobalUI.get_node("TextBox").get_node("TextLabel")
+	Message.TextBox = GlobalUI.get_node("TextBox")
+	Message.TextLabel = GlobalUI.get_node("TextBox").get_node("TextLabel")
+	

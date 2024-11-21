@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1731006286
+::res://::1732046222
 export_presets.cfg::TextFile::-1::1712510707::0::1::::<><>::
 icon.png::CompressedTexture2D::2473449446807914656::1712510707::1712510707::1::::<><>::
 ::res://addons/::1730932375
@@ -31,7 +31,7 @@ THIRDPARTY.md::TextFile::-1::1731006286::0::1::::<><>::
 ::res://Fonts/::1731006286
 Kaifontnormal-Regular.ttf (1).otf::FontFile::7405424939011172166::1712510707::1731006286::1::::<><>::
 ::res://Scenes/::1730591902
-::res://Scenes/Characters/::1731511302
+::res://Scenes/Characters/::1732104173
 player.tres::VisualShader::8876001459559606761::1712510707::0::1::::<><>::
 player.tscn::PackedScene::467732096004453619::1712510707::0::1::::<><>::uid://b0yjajspvkg7v::::res://Sprites/Characters/Mars_Run.png<>res://Scripts/Characters/player.gd
 test.tres::VisualShader::3620321313735487245::1712510707::0::1::::<><>::
@@ -44,9 +44,9 @@ ExitComa.tscn::PackedScene::5390395100053632872::1712510707::0::1::::<><>::res:/
 ::res://Scenes/Maps/House/::1730979058
 house1.tscn::PackedScene::7694869979681218728::1712510707::0::1::::<><>::uid://q8cq4c7uvg7s::::res://Sprites/Map/HouseTileset.png<>uid://gwtqkb2muqfj::::res://Scenes/Characters/player.tscn<>uid://3li7mnsnr6m8::::res://Sprites/Map/Objects.png<>res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd<>uid://c62ggdl0fw6rs::::res://Scenes/Events/InteractBox.tscn<>uid://d0a0e7ps52lde::::res://Scenes/Events/ZoneArea.tscn<>res://Scripts/TextScripts/House/interact_box_lamp.gd<>uid://b13whgac5bh5b::::res://Sounds/Effects/alarmClock.ogg
 house2.tscn::PackedScene::4425078085787711403::1712510707::0::1::::<><>::uid://q8cq4c7uvg7s::::res://Sprites/Map/HouseTileset.png<>uid://gwtqkb2muqfj::::res://Scenes/Characters/player.tscn<>res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd<>uid://c62ggdl0fw6rs::::res://Scenes/Events/InteractBox.tscn<>uid://d0a0e7ps52lde::::res://Scenes/Events/ZoneArea.tscn
-::res://Scenes/Special/::1731511302
+::res://Scenes/Special/::1732104172
 battle.tscn::PackedScene::5373844056016811701::1712510707::0::1::::<><>::uid://q8cq4c7uvg7s::::res://Sprites/Map/HouseTileset.png<>uid://3li7mnsnr6m8::::res://Sprites/Map/Objects.png<>uid://gwtqkb2muqfj::::res://Scenes/Characters/player.tscn<>uid://b3if2qm2s3b7j::::res://Scenes/UI/battleUI.tscn
-::res://Scenes/UI/::1731929537
+::res://Scenes/UI/::1732193369
 Backgrounds.tscn::PackedScene::3839632862738129915::1712510707::0::1::::<><>::uid://isi2roa2d0ju::::res://Sprites/UI/Image1.png<>uid://bbifl61h5priu::::res://icon.png<>res://Shaders/wave_effect.gdshader
 battleUI.tscn::PackedScene::4368575989152919085::1712510707::0::1::::<><>::uid://dnb2dpvn0ypgk::::res://Shaders/base_theme.tres
 control.tscn::PackedScene::391483121572672299::1712510707::0::1::::<><>::uid://drhcl7hakd065::::res://Sprites/UI/UpArrow.png<>uid://dgyokl5a6t3on::::res://Sprites/UI/Titelloses 27_20240305004213.png<>uid://dn1del3vo2bba::::res://Sprites/UI/DownArrow.png<>uid://ubwakycxyvh6::::res://Sprites/UI/LeftArrow.png<>uid://byvnss2k70kcy::::res://Sprites/UI/Titelloses 27_20240305004224.png<>uid://c064o5nrynwbd::::res://Sprites/UI/RightArrow.png<>uid://db62qu7705qrr::::res://Sprites/UI/Titelloses 27_20240305004207.png<>uid://cgpxb4gc2rikx::::res://Sprites/UI/Titelloses 27_20240305004219.png
@@ -60,7 +60,7 @@ player_old.gd::GDScript::-1::1712510707::0::1::::<>CharacterBody2D<>::
 ::res://Scripts/Events/::1730933164
 InteractBox.gd::GDScript::-1::1712510707::0::1::::TextObject<>Area2D<>::
 ZoneArea.gd::GDScript::-1::1712510707::0::1::::<>Node2D<>::
-::res://Scripts/Global/::1731797270
+::res://Scripts/Global/::1732193347
 create_nodes.gd::GDScript::-1::1731006286::0::1::::<>Node<>::
 global.gd::GDScript::-1::1731006286::0::1::::<>Node<>::
 global_variables.gd::GDScript::-1::1712510707::0::1::::<>Node<>::
@@ -70,9 +70,9 @@ ExitComa.gd::GDScript::-1::1712510707::0::1::::<>Node2D<>::
 ::res://Scripts/TextScripts/::1730933234
 ::res://Scripts/TextScripts/House/::1730933240
 interact_box_lamp.gd::GDScript::-1::1730933240::0::1::::<>Node2D<>::
-::res://Scripts/UI/::1730978966
-Menu.gd::GDScript::-1::1712510707::0::1::::<>Control<>::
-::res://Shaders/::1731929537
+::res://Scripts/UI/::1732193307
+Menu.gd::GDScript::-1::1712510707::0::1::::<>ColorRect<>::
+::res://Shaders/::1732193369
 base_theme.tres::Theme::8075426933230367810::1712510707::0::1::::<><>::
 Blur.gdshader::Shader::-1::1712510707::0::1::::<><>::
 DreamyBackgroundShader.tres::Shader::2449327984324195447::1712510707::0::1::::<><>::
@@ -104,11 +104,10 @@ PuzzleMusicDistortedMain.mp3::AudioStreamMP3::7997015471049079794::1712510707::1
 ::res://Sprites/::1730591900
 ::res://Sprites/Characters/::1730591899
 Mars_Run.png::CompressedTexture2D::4191233794902869741::1712510707::1712510707::1::::<><>::
-::res://Sprites/Map/::1731803187
+::res://Sprites/Map/::1732103699
 Effects.png::CompressedTexture2D::4412844317095173514::1712510707::1712510707::1::::<><>::
 HouseTileset.png::CompressedTexture2D::1191297498528758738::1712510707::1712510707::1::::<><>::
 Objects.png::CompressedTexture2D::1988539309705226253::1712510707::1712510707::1::::<><>::
-Screenshot_20241116-234344.png::CompressedTexture2D::6688677524178358283::1731797024::1731797068::1::::<><>::
 Screenshot_20241117-012604.png::CompressedTexture2D::772383370071579843::1731803164::1731803187::1::::<><>::
 ::res://Sprites/UI/::1730591900
 Background1.png::CompressedTexture2D::6595449033893666340::1712510707::1712510707::1::::<><>::
