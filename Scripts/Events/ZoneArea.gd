@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var zone := "res://Scenes/"
+@export var zone : Resource
 @export var wait_time := 0.5
 @export var tween_time := 0.5
 @export var playerPos := Vector2i(0, 0)

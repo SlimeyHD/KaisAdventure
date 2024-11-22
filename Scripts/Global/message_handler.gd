@@ -84,7 +84,7 @@ func startDialogue(canWalk : bool = false):
 #endregion
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("accept", true) and event.is_action("accept"):
+	if Input.is_action_just_pressed("ui_accept", true) and event.is_action("ui_accept"):
 		print("Pressed Accept")
 		if isGeneratingText:
 			skipToEnd = true

@@ -35,7 +35,7 @@ func loadGame():
 	Global.toScene("res://Scenes/Maps/HeadWorld/ExitComa.tscn", 2.0, 2.0, Vector2i(288, 1008))
 
 func _input(_event):
-	if Input.is_action_just_pressed("accept"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if get_viewport().gui_get_focus_owner() == null: return
 		if get_viewport().gui_get_focus_owner().name == "NewGameButton" and !cd: # Starts a new game
 			loadGame()

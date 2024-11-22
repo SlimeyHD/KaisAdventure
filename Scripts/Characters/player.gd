@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var InteractableRay = $InteractableRay
 
+@onready var AreaCollisionDetector = $AreaCollisionDetector
+
 @export var walkingSpeed = 1.0
 
 var WalkPixelAmount = 32
@@ -17,8 +19,9 @@ func lookTo(direction):
 	animationTree.set("parameters/Idle/blend_position", direction)
 
 func zoneCheck():
-	if $Area2D.get_overlapping_areas() != [] and $Area2D.get_overlapping_areas()[0].name == "ZoneArea":
-		var ZoneArea = $Area2D.get_overlapping_areas()[0].get_parent()
+	if AreaCollisionDetector.get_overlapping_areas() == []: return
+	if AreaCollisionDetector.get_overlapping_areas()[0].name == "ZoneArea":
+		var ZoneArea = AreaCollisionDetector.get_overlapping_areas()[0].get_parent()
 		Global.toScene(ZoneArea.zone, ZoneArea.tween_time, ZoneArea.wait_time, ZoneArea.playerPos, ZoneArea.lookDirection)
 
 func pressedAcceptButton():
@@ -37,7 +40,7 @@ func pressedChangeWorldButton():
 		GlobalVar.isChangingWorld = false
 
 func _input(_event):
-	if Input.is_action_just_pressed("accept"): pressedAcceptButton()
+	if Input.is_action_just_pressed("ui_accept"): pressedAcceptButton()
 	if Input.is_action_just_pressed("changeWorld"): pressedChangeWorldButton()
 
 func _physics_process(_delta):
