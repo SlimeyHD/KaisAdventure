@@ -10,55 +10,33 @@
 texture = ExtResource("1_fmlf5")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
 0:2/0/texture_origin = Vector2i(0, 8)
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:2/0 = 0
 1:2/0/texture_origin = Vector2i(0, 8)
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:2/0 = 0
 2:2/0/texture_origin = Vector2i(0, 8)
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:2/0 = 0
 3:2/0/texture_origin = Vector2i(0, 8)
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, 24)
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/size_in_atlas = Vector2i(1, 2)
 2:0/next_alternative_id = 2
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, -8)
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 40, -16, 40)
 2:0/1 = 1
 2:0/1/texture_origin = Vector2i(0, 42)
-2:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/1/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_7d12s"]
 tile_size = Vector2i(32, 32)
@@ -81,7 +59,6 @@ layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array(393269, 131072, 0)
 layer_2/name = "Objects2"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_q7qdy")]
 editor_description = "Position: 
@@ -121,4 +98,3 @@ playerPos = Vector2i(560, 848)
 
 [node name="InteractionArea" parent="." instance=ExtResource("5_fpag7")]
 position = Vector2(1712, 240)
-TextArray = ["Bro did you forget that you can't leave?", "You are trapped here lol", "Don't try to escape; You cannot leave you understood? ", ">:(", "Or else daddy will be maddy >:(("]

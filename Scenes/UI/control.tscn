@@ -42,7 +42,7 @@ texture_pressed = ExtResource("2_4bhg7")
 shape = SubResource("RectangleShape2D_fdocs")
 shape_visible = false
 passby_press = true
-action = "accept"
+action = "ui_accept"
 visibility_mode = 1
 
 [node name="Down" type="TouchScreenButton" parent="."]

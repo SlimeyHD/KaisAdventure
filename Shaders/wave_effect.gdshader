@@ -73,24 +73,24 @@ void fragment(){
 	float def_y = calculate_diff(UV.y, vertical_deform_amplitude, vertical_deform_frequency, vertical_deform_speed);
 	float wav_x = calculate_diff(UV.y, horizontal_wave_amplitude, horizontal_wave_frequency, horizontal_wave_speed);
 	float wav_y = calculate_diff(UV.x, vertical_wave_amplitude, vertical_wave_frequency, vertical_wave_speed);
-	
+
 	vec2 move = calculate_move(sprite_scroll_direction, sprite_scroll_speed);
-	
+
 	if ( int( UV.y * height ) % 2 == 0 && snes_transparency) wav_x = -wav_x;
-	
+
 	vec4 textube = texture(TEXTURE, fract(vec2(UV.x+def_x + wav_x, UV.y+def_y + wav_y) + move)*scale);
 	vec4 textubeInverted = texture(TEXTURE, fract(vec2(UV.x - def_x - wav_x, UV.y-def_y - wav_y) + move)*scale);
-	
+
 	if (gba_transparency)
 	{
 		float copy_wav_x = -calculate_diff(UV.y, horizontal_wave_amplitude, horizontal_wave_frequency, horizontal_wave_speed);
 		vec4 tex_copy;
-		
+
 		if ( int( UV.y * height ) % 2 == 1 && snes_transparency)
 		{
 			copy_wav_x = -copy_wav_x;
 		}
-		
+
 		if (gba_transparency_scroll_direction != vec2(0.0))
 		{
 			vec2 copy_move = calculate_move(gba_transparency_scroll_direction, gba_transparency_scroll_speed);
@@ -99,19 +99,19 @@ void fragment(){
 		else tex_copy = texture(TEXTURE, vec2(UV.x+def_x + copy_wav_x, UV.y+def_y + wav_y) + move);
 		textube = mix(textube, tex_copy, gba_transparency_value);
 	}
-	
+
 	float redTextube 		= textube.r * (enableRed ? 1.0 : 0.0);
 	float greenTextube 		= textube.g * (enableGreen ? 1.0 : 0.0);
 	float blueTextube		= textube.b * (enableBlue ? 1.0 : 0.0);
-	
+
 	float totalTextube = (paletteReversed ? -1.0 : 1.0) * (redTextube + greenTextube + blueTextube);
 	float palette_swap = mod(totalTextube + TIME*palette_cycling_speed, 1);
-	
+
 	if (horizontal_scan_line) textube = mix(textubeInverted, COLOR, float(int(UV.y * height) % 2));
 	if (vertical_scan_line) textube = mix(textubeInverted, COLOR, float(int(UV.x * width) % 2));
-	
+
 	if (paletteOverride) textube = vec4(texture(palette, vec2(palette_swap, 0)).rgb, textube.a);
 	if (paletteAdd) textube = texture(palette, vec2(palette_swap, 0.0)) + textube;
-	
+
 	COLOR = textube;
 }

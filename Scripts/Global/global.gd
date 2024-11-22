@@ -30,6 +30,9 @@ func toScene(path, tween_time = 1.0, wait_time = 1.0, playerPos = Vector2i(0, 0)
 	call_deferred("_deferred_goto_scene", path, tween_time, wait_time, playerPos, lookDirection, changeTransition)
 
 func _deferred_goto_scene(path, tween_time, wait_time, playerPos, lookDirection, changeTransition):
+	if typeof(path) == 24: #Int type of Resource type
+		path = path.resource_path
+	
 	GlobalVar.isLoading = true
 	GlobalVar.canInteract = false
 	

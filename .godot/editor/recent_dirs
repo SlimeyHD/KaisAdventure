@@ -1,6 +1,5 @@
 res://Scenes/Maps/House
 res://Shaders
-res://Scenes/Templates
 res://Scenes/Special
 /storage/emulated/0/GodotGames/KaisAdventure
 res://Sounds
@@ -8,5 +7,4 @@ res://Sounds/Effects
 res://Scripts/UI
 res://Sprites/Map
 res://
-res://Scripts/TextScripts/House
 res://Fonts
