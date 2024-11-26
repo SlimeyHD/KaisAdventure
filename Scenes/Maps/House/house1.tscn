@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhvpncj0b0ytk"]
+[gd_scene load_steps=11 format=3 uid="uid://dhvpncj0b0ytk"]
 
 [ext_resource type="Texture2D" uid="uid://q8cq4c7uvg7s" path="res://Sprites/Map/HouseTileset.png" id="1_1macd"]
 [ext_resource type="PackedScene" uid="uid://gwtqkb2muqfj" path="res://Scenes/Characters/player.tscn" id="2_dn683"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_jl8k7"]
 [ext_resource type="PackedScene" uid="uid://c62ggdl0fw6rs" path="res://Scenes/Events/InteractBox.tscn" id="4_xeame"]
 [ext_resource type="PackedScene" uid="uid://d0a0e7ps52lde" path="res://Scenes/Events/ZoneArea.tscn" id="5_ftalr"]
-[ext_resource type="Script" path="res://Scripts/TextScripts/House/interact_box_lamp.gd" id="6_j4dlj"]
 [ext_resource type="AudioStream" uid="uid://b13whgac5bh5b" path="res://Sounds/Effects/alarmClock.ogg" id="7_b7umr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8x13p"]
@@ -99,7 +98,6 @@ position_smoothing_speed = 2.0
 editor_draw_screen = false
 editor_draw_limits = true
 script = ExtResource("4_jl8k7")
-NODE_TO_FOLLOW_PATH = NodePath("..")
 SHAKE_DECAY = 0.001
 SHAKE_POSITION_MULTIPLIER = 2.0
 TILT_POSITION_DECAY = 0.001
@@ -109,7 +107,6 @@ CINEMATIC_DURATION = 3
 
 [node name="LampInteract" parent="." instance=ExtResource("4_xeame")]
 position = Vector2(432, 240)
-script = ExtResource("6_j4dlj")
 
 [node name="LampInteract2" parent="." instance=ExtResource("4_xeame")]
 position = Vector2(80, 232)

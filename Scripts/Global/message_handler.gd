@@ -83,9 +83,18 @@ func startDialogue(canWalk : bool = false):
 	GlobalVar.canWalk = true
 #endregion
 
+var cd = false
+
+func _pressedAccept():
+	if openedTextBox and isGeneratingText and !skipToEnd:
+		skipToEnd = true
+	emit_signal("acceptPressed")
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept", true) and event.is_action("ui_accept"):
-		print("Pressed Accept")
-		if isGeneratingText:
-			skipToEnd = true
-		emit_signal("acceptPressed")
+		_pressedAccept()
+	if Input.is_action_pressed("ui_cancel", true) and event.is_action("ui_cancel") and cd == false:
+		cd = true
+		_pressedAccept()
+		await Global.wait(0.1)
+		cd = false

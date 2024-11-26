@@ -4,6 +4,8 @@ var loaded = false
 
 var cd = false
 
+var enableCaution = false
+
 func _ready():
 	$NewGameButton.grab_focus()
 
@@ -20,19 +22,20 @@ func loadGame():
 	$EnterSound.play()
 	$NewGameButton.release_focus()
 	
-	await Global.transitionTo(Color(0, 0, 0, 1), 3.0, true)
-	Global.wait(1)
+	if enableCaution:
+		await Global.transitionTo(Color("BLACK"), 3.0)
+		Global.wait(1)
+		
+		var modTween = get_tree().create_tween()
+		modTween.tween_property(get_tree().root.get_node("GlobalUI/CautionText"), "modulate", Color("BLACK"), 2.0)
+		await modTween.finished
+		Global.wait(4)
+		
+		var modTween2 = get_tree().create_tween()
+		modTween2.tween_property(get_tree().root.get_node("GlobalUI/CautionText"), "modulate", Color("TRANSPARENT"), 2.0)
+		await modTween2.finished
 	
-	var modTween = get_tree().create_tween()
-	modTween.tween_property(get_tree().root.get_node("GlobalUI/CautionText"), "modulate", Color(1, 1, 1, 1), 2.0)
-	await modTween.finished
-	Global.wait(4)
-	
-	var modTween2 = get_tree().create_tween()
-	modTween2.tween_property(get_tree().root.get_node("GlobalUI/CautionText"), "modulate", Color(1, 1, 1, 0), 2.0)
-	await modTween2.finished
-	
-	Global.toScene("res://Scenes/Maps/HeadWorld/ExitComa.tscn", 2.0, 2.0, Vector2i(288, 1008))
+	Global.toScene("res://Scenes/Maps/HeadWorld/ComaStartPlace.tscn", 2.0, 2.0, Vector2i(288, 96))
 
 func _input(_event):
 	if Input.is_action_just_pressed("ui_accept"):

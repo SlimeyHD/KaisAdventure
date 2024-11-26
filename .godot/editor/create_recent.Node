@@ -1,10 +1,11 @@
+ColorRect
+TextureRect
+Node
 Control
 TileMapLayer
-Node
 Node2D
 Area2D
 AnimationPlayer
-TextureRect
 RichTextLabel
 Panel
 TileMap

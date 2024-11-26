@@ -4,7 +4,7 @@ class_name Camera2DPlus
 
 ### Customizable Variables:
 @export_group("Camera Follow")
-@export_node_path("Node") var NODE_TO_FOLLOW_PATH: NodePath ## The node that the camera will follow. This only works properly if the Camera2D+ is not a child node of the node that is being followed.
+@export var NODE_TO_FOLLOW_PATH: Node ## The node that the camera will follow. This only works properly if the Camera2D+ is not a child node of the node that is being followed.
 @export var FOLLOW_OFFSET: Vector2 = Vector2.ZERO ## The offset position relative to the node that is being followed.
 
 @export_group("Camera Shake")
@@ -26,8 +26,11 @@ class_name Camera2DPlus
 @export_range(-99, 99) var CINEMATIC_LAYER: int = 2 ## The layer of the CanvasLayer that the cinematic effects will be at.
 @export_range(0.001, 10.0) var CINEMATIC_DURATION: int = 1 ## The duration of how long it takes until the effect is done.
 
+@export_group("Limit Settings")
+@export var CameraLimitRect : ColorRect
+
 # Nodes:
-@onready var node_to_follow: Node = get_node(NODE_TO_FOLLOW_PATH)
+@onready var node_to_follow: Node = NODE_TO_FOLLOW_PATH
 
 # Variables:
 var flash_layer: CanvasLayer ## This variable is going to store the CanvasLayer that is going to store the flash related stuff.
@@ -45,7 +48,6 @@ var vertical_enabled: bool = false ## The value of this variable is determined b
 
 var position_tilt: Vector2 = Vector2.ZERO ## The camera's position tilt offset.
 var angle_tilt: float = 0.0 ## The camera's angle tilt offset.
-
 
 func _ready() -> void:
 	## Adding all the necessary CanvasLayers so the Camera2D+ can work properly.
@@ -96,6 +98,13 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	##Automatically set limits
+	limit_top = CameraLimitRect.position.y
+	limit_bottom = CameraLimitRect.position.y + (CameraLimitRect.size.y)
+	
+	limit_right = CameraLimitRect.position.x + (CameraLimitRect.size.x)
+	limit_left = CameraLimitRect.position.x
+	
 	## Applying the camera shake.
 	rotation_degrees = randf_range(-shake_strength * SHAKE_ANGLE_MULTIPLIER, shake_strength * SHAKE_ANGLE_MULTIPLIER) + angle_tilt # Randomizing the camera angle.
 	offset = Vector2(randf_range(-shake_strength * SHAKE_POSITION_MULTIPLIER, shake_strength * SHAKE_POSITION_MULTIPLIER), # Randomizing the camera offset.
@@ -126,12 +135,12 @@ func tilt_angle(tilt: float) -> void:
 
 
 ## This function updates the path of the node that is being followed.
-func set_follow_node(new_node_path: NodePath) -> void:
+func set_follow_node(new_node_path: Node) -> void:
 	# Updating the node path variable.
 	NODE_TO_FOLLOW_PATH = new_node_path
 	
 	# Updating the node variable.
-	node_to_follow = get_node(NODE_TO_FOLLOW_PATH)
+	node_to_follow = NODE_TO_FOLLOW_PATH
 
 
 ## This function makes the Camera2DPlus flash with a certain color and with a certain duration.
