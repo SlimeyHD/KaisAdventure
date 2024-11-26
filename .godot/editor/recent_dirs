@@ -1,4 +1,5 @@
 res://Scenes/Special
+res://Sprites/Map
 res://Scenes/Maps/HeadWorld
 res://Shaders
 res://Scenes/Maps/House
@@ -6,6 +7,5 @@ res://Scenes/Maps/House
 res://Sounds
 res://Sounds/Effects
 res://Scripts/UI
-res://Sprites/Map
 res://
 res://Fonts

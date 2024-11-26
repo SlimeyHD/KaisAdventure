@@ -28,6 +28,7 @@ Global="*res://Scripts/Global/global.gd"
 GlobalVar="*res://Scripts/Global/global_variables.gd"
 Message="*res://Scripts/Global/message_handler.gd"
 CreateNodes="*res://Scripts/Global/create_nodes.gd"
+SoundHandler="*res://sound_handler.gd"
 
 [display]
 

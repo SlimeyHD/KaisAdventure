@@ -35,7 +35,7 @@ func loadGame():
 		modTween2.tween_property(get_tree().root.get_node("GlobalUI/CautionText"), "modulate", Color("TRANSPARENT"), 2.0)
 		await modTween2.finished
 	
-	Global.toScene("res://Scenes/Maps/HeadWorld/ComaStartPlace.tscn", 2.0, 2.0, Vector2i(288, 96))
+	Global.toScene("res://Scenes/Maps/HeadWorld/ComaStartPlace.tscn", 2.0, 2.0, Vector2i(784, 3888))
 
 func _input(_event):
 	if Input.is_action_just_pressed("ui_accept"):

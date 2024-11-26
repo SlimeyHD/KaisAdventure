@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://ci2faw3km3g05"]
 
-[ext_resource type="Script" path="res://Scripts/MapScripts/ExitComa.gd" id="1_7rvh3"]
+[ext_resource type="Script" path="res://Scripts/MapScripts/HeadMaps.gd" id="1_7rvh3"]
 [ext_resource type="TileSet" uid="uid://bghjocovquco" path="res://Scenes/Special/TileSet32x32.tres" id="2_4v6jg"]
 [ext_resource type="TileSet" uid="uid://5dh3oixsgtjn" path="res://Scenes/Special/TileSet16x16.tres" id="3_tqvai"]
 [ext_resource type="TileSet" uid="uid://coqieo48n4pm7" path="res://Scenes/Special/TileSet2x2.tres" id="4_3mmnb"]

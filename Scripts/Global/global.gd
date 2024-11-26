@@ -48,13 +48,15 @@ func _deferred_goto_scene(path, tween_time, wait_time, playerPos, lookDirection,
 	get_tree().current_scene = currentScene
 	
 	var playerNode = player.instantiate()
-	get_tree().current_scene.add_child(playerNode)
+	currentScene.add_child(playerNode)
 	
 	playerNode.position = Vector2i(floor(playerPos.x/32)*32 + 16, floor(playerPos.y/32)*32 + 4)
 	playerNode.lookTo(directions[lookDirection])
 	
 	var SceneCam : Camera2DPlus = get_tree().current_scene.get_node("Camera")
 	SceneCam.set_follow_node(playerNode)
+	
+	if currentScene.has_method("startMap") : currentScene.startMap()
 	
 	if changeTransition: await transitionTo(Color("TRANSPARENT"), tween_time)
 	
